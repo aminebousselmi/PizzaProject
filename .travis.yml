@@ -1,3 +1,13 @@
 language: ruby
 rvm:
- - 2.2
+- 2.0.0
+- 1.9.3
+- jruby-19mode
+- rbx-2
+deploy:
+  provider: heroku
+  api_key:
+    secure: IMWGZRWUtBxYlx8MaIrXwNOG17lHi5gyc+DkxulbK2aLxOs3WjnWz0f2JDvChLjqpcos25Wngp7eg6wMtOpTAhiFDKdD/dZZIASJH6g8FkjR1da8iB5JeXsEKp1UNRisoeZswg9dIietzTBtUk6rG+XCJ20bxk6h2zKN0CPQFLBYnMqK91dA89OJl0KOskAgh5b/VBkrVWcs9/8HUfPsSqYdD897I6JYt7g8JI32JC9eZg8KLnra4qkqwOAL2bOXtQtgAl1a4HM+fksl/YN99bqXQ+WBTgVdxYPnoq73orBbM/CJ7zH/Ti5S4EJWjxGhzUd5/bYCIRcmQOybgEzyQmXfLB4fjxBVg0k+bqK5EF9WUp91uAdQng9cZt8aVvskly/bIWCDcDfSFnZNJFzUqPlNnG6Or+ngspHM3soppOe3ezi3kCJbbUGDDtN2gi1ECrAXyVCXk+AHXowXISC/04g27wDQQIw8JbOiKwWGUgVxuZ6cnTXfiKE+e+zMHDo2a1f2bec3w6f9N9UkbI1xTllFbN0i56QxR5XSIZIc6p9N0MyKViap48+RCrILDOnW0lHUcHVaWoo9EZQ/A1ojLCT6g2vuRBPNdBr4iFCh8NRowngPsAPSOuuWCiBsDaUTXS+Jhmr0JjU7nr2R3OtqphykVdHZke4JnbuFgpkBtGU=
+  app: PizzaProject
+  on:
+    repo: aminebousselmi/PizzaProject
