@@ -8,3 +8,6 @@ deploy:
   app: pizzaprojectamine
   on:
     repo: aminebousselmi/PizzaProject
+  run:
+    - "rake db:migrate"
+    - "rake cleanup"
