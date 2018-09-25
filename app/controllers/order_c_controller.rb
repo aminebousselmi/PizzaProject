@@ -4,13 +4,13 @@ class OrderCController < ApplicationController
   # POST /orderC
   # POST /orderC.json
   def create
-    @order = Order.new(pizza_params)
+    @order = Order.new(order_params)
 
     respond_to do |format|
       if @order.save
-        format.json { render :show, status: :created, location: @pizza }
+        format.json { render :show, status: :created, location: @order }
       else
-        format.json { render json: @pizza.errors, status: :unprocessable_entity }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
   end
