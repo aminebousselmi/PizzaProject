@@ -1,6 +1,3 @@
-env:
-  global:
-    - CC_TEST_REPORTER_ID=c397b52ff4a5ea90a510bbc150700dcf0bb86d84b01698bdc1a3deb02dc0e5f3
 language: ruby
 rvm:
 - 2.4.4
@@ -14,7 +11,12 @@ deploy:
   run:
     - "rake db:migrate"
     - "rake cleanup"
-
+env:
+  global:
+    - CC_TEST_REPORTER_ID=c397b52ff4a5ea90a510bbc150700dcf0bb86d84b01698bdc1a3deb02dc0e5f3
+language: ruby
+rvm:
+  - 2.4.4
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
