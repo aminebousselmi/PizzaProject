@@ -1,5 +1,5 @@
 class OrderController < ApplicationController
-     skip_before_action :verify_authenticity_token, :only => [:show, :create]
+     skip_before_action :verify_authenticity_token, :only => [:index, :show, :create]
   
    # GET /pizzas
   # GET /pizzas.json
