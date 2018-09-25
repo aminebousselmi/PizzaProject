@@ -1,5 +1,11 @@
-class OrderCController < ApplicationController
-   skip_before_action :verify_authenticity_token, :only => [:create]
+class OrderController < ApplicationController
+     skip_before_action :verify_authenticity_token, :only => [:show, :create]
+  
+   # GET /pizzas
+  # GET /pizzas.json
+  def index
+    @orders = Order.all
+  end
   
   # POST /orderC
   # POST /orderC.json
