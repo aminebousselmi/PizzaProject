@@ -1,4 +1,17 @@
 <p>Commandes</p>
 
+<% @order.each do |ordr| %>
 
+<table align=center border=1 >
+  <th align-text=center > 
+	<td>Name:
+	<td>Adress
+	<td> Pizza
+  </th>
+  <tr>
+    <td> <%= ordr[:order][:name]  %></td>
+    <td> <%= ordr[:order][:adress] %></td>
+  </tr>
+</table>
+<% end %>
 <br>
