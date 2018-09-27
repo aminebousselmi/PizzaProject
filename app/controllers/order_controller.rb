@@ -4,4 +4,9 @@ class OrderController < ApplicationController
       # GET /order.json
       def show
       end
+  
+       # GET /pizzas
+       # GET /pizzas.json
+       def index
+       end
 end
