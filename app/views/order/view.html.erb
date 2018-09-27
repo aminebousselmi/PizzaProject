@@ -1,6 +1,6 @@
 <p>Commandes</p>
 
-<% @order.each do |ordr| %>
+<% @orders.each do |order| %>
 
 <table align=center border=1 >
   <th align-text=center > 
@@ -9,8 +9,8 @@
 	<td> Pizza
   </th>
   <tr>
-    <td> <%= ordr[:order][:name]  %></td>
-    <td> <%= ordr[:order][:adress] %></td>
+    <td> <%= order[:order][:name]  %></td>
+    <td> <%= order[:order][:adress] %></td>
   </tr>
 </table>
 <% end %>
