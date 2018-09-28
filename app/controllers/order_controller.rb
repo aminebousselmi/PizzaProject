@@ -9,7 +9,7 @@ def create
     newOrder = Order.new(:name => @name, :adress => @adress)
     newOrder.save
     p @pizzas
-    @erros="Erros : [";
+    @erros=": [";
     @pizzas.each do |pizza|
 	@orderPizza =Pizza.where(name: pizza).first
 	if @orderPizza.nil?
@@ -41,7 +41,7 @@ end
       p "orders "
       @orders.push({order: order ,pizzas: pizzas})
       p pizzas
-      render json: {"Orders : " => @orders}
+      render json: {"message" => @allOrders}
     end
 end
   
