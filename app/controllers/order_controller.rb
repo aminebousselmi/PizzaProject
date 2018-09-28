@@ -23,9 +23,12 @@ def create
 	newOrderline.pizza=@orderPizza
 	newOrderline.save
     end
+   if @newOrderline.save
     @erros= @erros+" Order created Succesfully"
+   end
     @erros = @erros + "]"
-    render json: {"message" => @erros}
+   
+     render json: {"message :" => @erros}
 end
   
    def view
@@ -41,7 +44,11 @@ end
       p "orders "
       @orders.push({order: order ,pizzas: pizzas})
       p pizzas
-      render json: {"message" => @allOrders}
+    end
+    
+    def index
+      @allOrders = Order.all
+      format.json { render :json => @allOrders}
     end
 end
   
