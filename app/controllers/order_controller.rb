@@ -1,32 +1,21 @@
 class OrderController < ApplicationController    
       skip_before_action :verify_authenticity_token, :only => [:create]
+  
 def create 
-    p "orderController"
     @name = params[:name]
     @adress = params[:adress]
-    p @adress
     @pizzas = params[:pizzas]
     newOrder = Order.new(:name => @name, :adress => @adress)
     newOrder.save
-    p @pizzas
-    @erros=": [";
     @pizzas.each do |pizza|
-	@orderPizza =Pizza.where(name: pizza).first
-	if @orderPizza.nil?
-	  @erros= @erros+" - There is no pizza with name = "+pizza
-	  p @erros
-	  next
-	end 
-	p @orderPizza
-	newOrderline = Orderline.new
-	newOrderline.order=newOrder
-	newOrderline.pizza=@orderPizza
-	newOrderline.save
+      @orderPizza =Pizza.where(name: pizza).first
+      newOrderline = Orderline.new
+      newOrderline.order=newOrder
+      newOrderline.pizza=@orderPizza
+      newOrderline.save
     end
-    @erros= @erros+" Order created Succesfully"
-    @erros = @erros + "]"
    
-     render json: {"message :" => @erros}
+     render json: {"message :" => "Order created Succesfully"}
 end
   
    def view
@@ -39,9 +28,7 @@ end
           pizza = Pizza.find(orderline[:pizza_id])
           pizzas.push(pizza)
       end
-      p "orders "
       @orders.push({order: order ,pizzas: pizzas})
-      p pizzas
     end
 end
   
